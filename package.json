@@ -1,0 +1,23 @@
+{
+  "name": "mycalc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santosscf/mycalc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santosscf/mycalc/issues"
+  },
+  "homepage": "https://github.com/santosscf/mycalc#readme",
+  "devDependencies": {
+    "jasmine": "^3.8.0"
+  }
+}
