@@ -9,7 +9,7 @@ describe('Suite de testes da funcionalidade multiplicação da minha calculadora
 	it('Deve multiplicar dois numeros interios, 5 e 3, e retornar 15', function(){
 		expect(myCalc.multiplicar(5, 3)).toEqual(15);
 	});
-
+	
 	it('Deve multiplicar dois numeros de ponto flutuante, 5.5 e 3.4, e retornar 18.7', function(){
 		expect(myCalc.multiplicar(5.5, 3.4)).toEqual(18.7);
 	});

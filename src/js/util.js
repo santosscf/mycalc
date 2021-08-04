@@ -56,10 +56,22 @@ function calcular() {
         case '*':
             res = myCalc.multiplicar(num1, num2);
             break;
+        case '^':
+            res = myCalc.exponenciar(num1, num2);
+            break;
     }
     res = res.toString();
     txtInput.value = res.length <= 10 ? res : res.substr(0, 10);
     num1 = txtInput.value;
     num2 = '';
     operacao = '';
+}
+
+function calcular2() {
+    res = myCalc.radiciar(num1, num2);
+    res = res.toString();
+    txtInput.value = res.length <= 10 ? res : res.substr(0, 10);
+    num1 = txtInput.value;
+    num2 = '';
+    operacao = '';    
 }

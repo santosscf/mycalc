@@ -24,6 +24,21 @@ var myCalc = {
 		var resultado = n1 / n2;
 
 		return Math.round(resultado*100) / 100;
+	},
+
+	exponenciar: function(n1, n2){
+		var resultado = n1 ** n2;
+
+		return Math.round(resultado*100) / 100;
+	},
+
+	radiciar: function(n1, n2){
+		if (n1 < 0 || n2 != ''){
+			return 'ERROR';
+		} 
+
+		var resultado = Math.sqrt(n1);
+		return Math.round(resultado*100) / 100;
 	}
 }
 
