@@ -1,8 +1,107 @@
-.kz-btn {
-    width: 55px;
-    margin-bottom: 4px;
+// Autora Stefany Caroline Ferreira dos Santos
+// Folha de estilo - Calculadora
+
+
+* {
+	background-color: #3b2601;
+} 
+
+body {
+	background-color: #3b2601;
+	color: black;
+	font-family: 'Patrick Hand SC', cursive;
 }
-.kz-input-text {
-    width: 173px !important;
-    margin-bottom: 4px;
+
+.container {
+	padding-top: 0vw;
+}
+
+h1 {
+	color: white;
+	font-size: 10vw;
+	text-align: center;
+}
+
+#calculadora {
+	background-color: rgba(254, 255, 255, 0.4);
+	border: solid #F28322 3px;
+	border-radius: 20px;
+	margin: 0vw 18vw; 
+	padding: 2vw;
+	color: #111D40;
+}
+
+input {
+	background-color: #fbf4d0;
+	border: solid #F28322 2px;
+	padding: 0px 16px;
+	margin: 0px 3px;
+	text-align: right;
+	font-weight: bold;
+	font-size: 4.7vw;
+}
+
+#keyboard {
+	margin-left: 1.5%;
+	margin-bottom: 2.5%;
+}
+
+.col-3 {
+	padding: 0px;
+	margin:  2vw 0px 0vw;
+}
+
+.col-6 {
+	padding: 0px;
+	margin:  2vw 0px 0vw;
+}
+
+button {
+  display: inline-block;
+  padding: 6px 15px 2px;
+  width: 87.5%;
+  font-size: 3vw;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #111D40;
+  border: none;
+  border-radius: 15px;
+}
+
+
+button:focus {
+  outline: none;
+}
+
+.operator {
+  background-color: #F28322;
+  box-shadow: 0 9px #fdf2e7;
+}
+
+.operator:hover {background-color: #f9c99f}
+
+.operator:active {
+  background-color: #F27329;
+  box-shadow: 0 5px #f9eeb8;
+  transform: translateY(4px);
+}
+
+.number {
+  background-color: #f9c99f;
+  box-shadow: 0 9px #fdf2e7;
+}
+
+.number:hover {background-color: #F28322}
+
+.number:active {
+  background-color: #F27329;
+  box-shadow: 0 5px #f9eeb8;
+  transform: translateY(4px);
+}
+
+#button0 {
+	width: 93.75%;
 }

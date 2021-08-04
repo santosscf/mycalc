@@ -1,110 +1,104 @@
+<!-- 
+	Aluna: Stefany Caroline Ferreira dos Santos
+	Calculadora
+-->
+
 <!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="utf-8">
+<html>
+<head>
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calculadora</title>
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<!-- JQuery Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Fontes Externas -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">
+
+	<!-- Personalizações -->
     <link rel="stylesheet" href="css/calculadora.css">
-  </head>
-  <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-                <br />
-                <div class="text-center bg-primary img-rounded">
-                    <br />
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <button 
-                                type="button" 
-                                class="btn btn-danger kz-btn" 
-                                onclick="limpar()">C</button>
-                            <input 
-                                type="text" 
-                                class="form-control text-right kz-input-text" 
-                                value="0" 
-                                id="resultado" 
-                                readonly>
-                        </div>
-                        <div class="form-group">
-                            <button 
-                                type="button" 
-                                class="btn btn-default kz-btn" 
-                                onclick="adicionarNumero(7)">7</button>
-                            <button 
-                                type="button" 
-                                class="btn btn-default kz-btn" 
-                                onclick="adicionarNumero(8)">8</button>
-                            <button 
-                                type="button" 
-                                class="btn btn-default kz-btn" 
-                                onclick="adicionarNumero(9)">9</button>
-                            <button 
-                                type="button" class="btn btn-warning kz-btn" onclick="definirOperacao('/')">/</button>
-                        </div>
-                        <div class="form-group">
-                            <button 
-                                type="button" 
-                                class="btn btn-default kz-btn" 
-                                onclick="adicionarNumero(4)">4</button>
-                            <button 
-                                type="button" 
-                                class="btn btn-default kz-btn" 
-                                onclick="adicionarNumero(5)">5</button>
-                            <button 
-                                type="button" 
-                                class="btn btn-default kz-btn" 
-                                onclick="adicionarNumero(6)">6</button>
-                            <button 
-                                type="button" 
-                                class="btn btn-warning kz-btn" 
-                                onclick="definirOperacao('*')">*</button>
-                        </div>
-                        <div class="form-group">
-                            <button 
-                                type="button" 
-                                class="btn btn-default kz-btn" 
-                                onclick="adicionarNumero(1)">1</button>
-                            <button 
-                                type="button" 
-                                class="btn btn-default kz-btn" 
-                                onclick="adicionarNumero(2)">2</button>
-                            <button 
-                                type="button" 
-                                class="btn btn-default kz-btn" 
-                                onclick="adicionarNumero(3)">3</button>
-                            <button 
-                                type="button" 
-                                class="btn btn-warning kz-btn" 
-                                onclick="definirOperacao('-')">-</button>
-                        </div>
-                        <div class="form-group">
-                            <button 
-                                type="button" 
-                                class="btn btn-default kz-btn" 
-                                onclick="adicionarNumero(0)">0</button>
-                            <button 
-                                type="button" 
-                                class="btn btn-default kz-btn" 
-                                onclick="adicionarNumero('.')">.</button>
-                            <button 
-                                type="button" 
-                                class="btn btn-success kz-btn" 
-                                onclick="calcular()">=</button>
-                            <button 
-                                type="button" 
-                                class="btn btn-warning kz-btn" 
-                                onclick="definirOperacao('+')">+</button>
-                        </div>
-                    </form>
-                    <br />
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="js/calculadora.js"></script>
+
+</head>
+<body>
+	<div class="container">
+
+		<div id="calculadora" class="row">
+			<input type="text" value="0" class="col-12" id="resultado" readonly>
+			<div id="keyboard" class="col-12 row">
+				<div class="col-3">
+					<button id="buttonCE" class="operator" onclick="limpar()">CE</button>			
+				</div>
+				<div class="col-3">
+					<button id="buttonPotencia" class="operator" onclick="definirOperacao('^')">x^y</button>		
+				</div>
+				<div class="col-3">
+					<button id="buttonRaiz" class="operator" onclick="definirOperacao('r')">√x</button>		
+				</div>
+				<div class="col-3">
+					<button id="buttonDivisao" class="operator" onclick="definirOperacao('/')">/</button>			
+				</div>
+				<div class="col-3">
+					<button id="button7" class="number" onclick="adicionarNumero(7)">7</button>
+				</div>
+				<div class="col-3">
+					<button id="button8" class="number" onclick="adicionarNumero(8)">8</button>			
+				</div>
+				<div class="col-3">
+					<button id="button9" class="number" onclick="adicionarNumero(9)">9</button>		
+				</div>
+				<div class="col-3">
+					<button id="buttonMultiplicacao" class="operator" onclick="definirOperacao('*')">*</button>		
+				</div>				
+				<div class="col-3">
+					<button id="button4" class="number" onclick="adicionarNumero(4)">4</button>
+				</div>
+				<div class="col-3">
+					<button id="button5" class="number" onclick="adicionarNumero(5)">5</button>			
+				</div>
+				<div class="col-3">
+					<button id="button6" class="number" onclick="adicionarNumero(6)">6</button>		
+				</div>
+				<div class="col-3">
+					<button id="buttonSoma" class="operator" onclick="definirOperacao('+')">+</button>		
+				</div>
+				<div class="col-3">
+					<button id="button1" class="number" onclick="adicionarNumero(1)">1</button>
+				</div>
+				<div class="col-3">
+					<button id="button2" class="number" onclick="adicionarNumero(2)">2</button>			
+				</div>
+				<div class="col-3">
+					<button id="button3" class="number" onclick="adicionarNumero(3)">3</button>		
+				</div>
+				<div class="col-3">
+					<button id="buttonSubtracao" class="operator" onclick="definirOperacao('-')">-</button>		
+				</div>
+				<div class="col-6">
+					<button id="button0" class="number" onclick="adicionarNumero(0)">0</button>
+				</div>
+				<div class="col-3">
+					<button id="buttonVirgula" class="number" onclick="adicionarNumero('.')">,</button>			
+				</div>
+				<div class="col-3">
+					<button id="buttonIgual" class="operator" onclick="calcular()">=</button>		
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+
+	<script src="js/keyboard.js"></script>
     <script src="js/myCalc.js"></script>
     <script src="js/util.js"></script>
-  </body>
+</body>
+</html>
